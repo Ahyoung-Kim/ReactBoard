@@ -91,7 +91,7 @@ const ShowPostList = ({apiUrl}) => {
           <ul>
             {postList.map((post) => (
               // EachPost
-              <EachPost />
+              <EachPost key={post.id} title={post.title} postID={post.id} />
             ))}
           </ul>
         )}

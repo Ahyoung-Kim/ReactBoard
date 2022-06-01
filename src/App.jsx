@@ -11,6 +11,9 @@ import { Main, MediaDiv } from "./styledComponent";
 import Header from "./pages/Header";
 import Slogun from "./pages/Slogun";
 import ShowPostList from "./pages/ShowPostList";
+import WritePost from "./pages/WritePost";
+import ShowPost from "./pages/ShowPost";
+import Footer from "./pages/Footer";
 
 const apiUrl = "https://reactapitest.pythonanywhere.com/api/";
 
@@ -33,14 +36,15 @@ function App() {
 
                         <Routes>
                             <Route path="/" element={<ShowPostList apiUrl={apiUrl}/>}/>
-                            <Route path="/wrtie" />
-                            <Route path="/post/:postID" />
+                            <Route path="/wrtie" element={<WritePost apiUrl={apiUrl} />} />
+                            <Route path="/post/:postID" element={<ShowPost apiUrl={apiUrl} />} />
                         </Routes>
                     </Main>
 
                 </MediaDiv>
             </ThemeProvider>
             {/* FOOTER */}
+            <Footer />
         </>
     )
 }
